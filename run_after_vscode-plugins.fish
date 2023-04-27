@@ -1,11 +1,15 @@
 #!/usr/bin/env fish
 
-set wanted_extensions (echo "bbenoist.Nix
-bmalehorn.vscode-fish
+# idempotent script meant to run on every chezmoi apply
+# will sync installed vscode extensions with the list
+# which includes uninstalls
+
+set wanted_extensions (echo "bmalehorn.vscode-fish
 Boto3typed.boto3-ide
 golang.go
 hashicorp.terraform
 jdforsythe.add-new-line-to-files
+jnoortheen.nix-ide
 ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
