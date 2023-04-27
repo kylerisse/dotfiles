@@ -1,0 +1,50 @@
+{
+    "vim.overrideCopy": false,
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ],
+    "protoc": {
+        "path": "/usr/bin/protoc",
+        "compile_on_save": false
+    },
+    "go.useLanguageServer": true,
+    "vim.handleKeys": {
+        "<C-w>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+        "<C-x>": false,
+        "<C-v>": false
+    },
+    "go.autocompleteUnimportedPackages": true,
+    "go.formatTool": "goimports",
+    "go.enableCodeLens": {
+
+        "references": false,
+        "runtest": true
+    },
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.showFunctions": false,
+    "go.toolsManagement.autoUpdate": true,
+    "files.associations": {
+        "*.raku": "perl6"
+    },
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+      "[terraform-vars]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "trailing-spaces.trimOnSave": true,
+    "terminal.integrated.scrollback": 50000,
+    "application.shellEnvironmentResolutionTimeout": 20,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "redhat.telemetry.enabled": false
+}
