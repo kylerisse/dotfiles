@@ -1,0 +1,7 @@
+[user]
+  name = kylerisse
+  email = kylerisse@users.noreply.github.com
+
+[alias]
+  recap   = log --all --oneline --no-merges --author=kylerisse
+  today   = log --since=00:00:00 --all --no-merges --oneline --author=kylerisse

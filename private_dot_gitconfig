@@ -1,0 +1,43 @@
+[includeIf "gitdir:~/go/src/github.com/"]
+  path = .gitconfig-github
+
+[includeIf "gitdir:~/go/src/gitlab.com/"]
+  path = .gitconfig-gitlab
+
+[core]
+  editor = vim
+  pager = less -xR
+
+[advise]
+  pushNonFastForward = false
+
+[stash]
+  showPatch = true
+
+[pull]
+  rebase = false
+
+[init]
+  defaultBranch = main
+
+[diff]
+  tool = icdiff
+
+[difftool]
+  prompt = false
+
+[difftool "icdiff"]
+  cmd = icdiff --line-numbers $LOCAL $REMOTE
+
+[alias]
+  df      = difftool
+  stats   = shortlog -sn --all --no-merges
+  recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  graph   = log --graph --all --decorate --stat --date=iso
+  root    = rev-parse --show-toplevel
+  fixup = "!f() { \
+      REMOTE=$(git config --get remote.origin.url); \
+      MASTER=$(git remote show ${REMOTE} | grep 'HEAD branch' | cut -d ' ' -f 5); \
+      BRANCH=${1:-${MASTER}}; \
+      git reset --soft ${BRANCH}; \
+    }; f"
