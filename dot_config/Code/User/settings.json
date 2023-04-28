@@ -1,15 +1,41 @@
 {
-    "vim.overrideCopy": false,
+    "application.shellEnvironmentResolutionTimeout": 20,
     "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 16,
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.showFunctions": true,
+    "files.associations": {
+        "*.raku": "perl6"
+    },
+    "go.autocompleteUnimportedPackages": true,
+    "go.formatTool": "goimports",
+    "go.enableCodeLens": {
+        "runtest": true
+    },
+    "go.toolsManagement.autoUpdate": false,
+    "go.useLanguageServer": true,
+    "protoc": {
+        "compile_on_save": false
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "redhat.telemetry.enabled": false,
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
     ],
-    "protoc": {
-        "path": "/usr/bin/protoc",
-        "compile_on_save": false
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.scrollback": 50000,
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
     },
-    "go.useLanguageServer": true,
+    "[terraform-vars]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "trailing-spaces.trimOnSave": true,
     "vim.handleKeys": {
         "<C-w>": false,
         "<C-f>": false,
@@ -17,34 +43,5 @@
         "<C-x>": false,
         "<C-v>": false
     },
-    "go.autocompleteUnimportedPackages": true,
-    "go.formatTool": "goimports",
-    "go.enableCodeLens": {
-
-        "references": false,
-        "runtest": true
-    },
-    "editor.suggest.localityBonus": true,
-    "editor.suggest.showFunctions": false,
-    "go.toolsManagement.autoUpdate": true,
-    "files.associations": {
-        "*.raku": "perl6"
-    },
-    "[terraform]": {
-        "editor.defaultFormatter": "hashicorp.terraform",
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "file"
-    },
-      "[terraform-vars]": {
-        "editor.defaultFormatter": "hashicorp.terraform",
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "file"
-    },
-    "trailing-spaces.trimOnSave": true,
-    "terminal.integrated.scrollback": 50000,
-    "application.shellEnvironmentResolutionTimeout": 20,
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "redhat.telemetry.enabled": false
+    "vim.overrideCopy": false
 }
