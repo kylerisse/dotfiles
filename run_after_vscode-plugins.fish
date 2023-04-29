@@ -4,6 +4,12 @@
 # will sync installed vscode extensions with the list
 # which includes uninstalls
 
+if not type -q code
+    exit 0
+end
+
+set -l NODE_OPTIONS ""
+
 set wanted_extensions (echo "bmalehorn.vscode-fish
 Boto3typed.boto3-ide
 golang.go
