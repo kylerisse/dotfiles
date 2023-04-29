@@ -1,5 +1,5 @@
 if status is-interactive
-  if hash nvim 2>/dev/null
+  if type -q nvim
     set EDITOR nvim
     alias vi='nvim'
     alias vim='nvim'
@@ -7,7 +7,7 @@ if status is-interactive
     set EDITOR vi
   end
 
-  if hash icdiff 2>/dev/null
+  if type -q icdiff
     alias diff='icdiff --line-numbers'
   end
 
