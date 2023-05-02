@@ -14,5 +14,10 @@ if status is-interactive
   set LESS '-xR'
   alias less='less -xR'
 
+  # private variables aren't secrets but shouldn't be public either
+  if test -e ~/.config/chezmoi/private-vars.fish
+    source ~/.config/chezmoi/private-vars.fish
+  end
+
   # TODO: ssh completions
 end
