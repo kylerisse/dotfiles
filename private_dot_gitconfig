@@ -35,9 +35,12 @@
   recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   graph   = log --graph --all --decorate --stat --date=iso
   root    = rev-parse --show-toplevel
-  fixup = "!f() { \
+  fixup   = "!f() { \
       REMOTE=$(git config --get remote.origin.url); \
       MASTER=$(git remote show ${REMOTE} | grep 'HEAD branch' | cut -d ' ' -f 5); \
       BRANCH=${1:-${MASTER}}; \
       git reset --soft ${BRANCH}; \
     }; f"
+  lo      = log --oneline
+  sha     = rev-parse --short HEAD
+  lsha    = rev-parse HEAD
