@@ -28,6 +28,7 @@ redhat.ansible
 redhat.vscode-yaml
 scriplit.perl6-lsp
 shardulm94.trailing-spaces
+streetsidesoftware.code-spell-checker
 timonwong.shellcheck
 vscodevim.vim
 waderyan.gitblame
