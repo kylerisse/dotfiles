@@ -1,0 +1,7 @@
+[user]
+  name = xkylerisse
+  email = 14634549-xkylerisse@users.noreply.gitlab.com
+
+[alias]
+  recap   = log --all --oneline --no-merges --author=xkylerisse
+  today   = log --since=00:00:00 --all --no-merges --oneline --author=xkylerisse
