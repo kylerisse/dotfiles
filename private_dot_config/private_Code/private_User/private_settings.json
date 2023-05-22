@@ -1,5 +1,6 @@
 {
     "application.shellEnvironmentResolutionTimeout": 20,
+    "ansible.python.interpreterPath": "python",
     "editor.fontSize": 14,
     "editor.suggest.localityBonus": true,
     "editor.suggest.showFunctions": true,
