@@ -4,6 +4,9 @@
 [includeIf "gitdir:~/go/src/gitlab.com/"]
   path = .gitconfig-gitlab
 
+[includeIf "gitdir:~/go/src/gitlab.com/xolv/"]
+  path = .gitconfig-gitlab-xolv
+
 [core]
   editor = vim
   pager = less -xR
