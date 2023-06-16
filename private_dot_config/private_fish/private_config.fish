@@ -20,5 +20,7 @@ if status is-interactive
   end
 
   # set GOROOT to nix location
-  set GOROOT (ls -al /run/current-system/sw/bin/go | awk '{ print $11}' | string replace '/bin/' '/share/')
+  if test -e /run/current-system/sw/bin/go
+    set GOROOT (ls -al /run/current-system/sw/bin/go | awk '{print $11}' | string replace '/bin/' '/share/')
+  end
 end
