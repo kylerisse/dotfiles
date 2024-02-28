@@ -1,7 +1,7 @@
 function fish_greeting
     set -l remote_dotfiles_master (curl --silent https://api.github.com/repos/kylerisse/dotfiles/git/refs/heads | jq -r '.[] | select (.ref=="refs/heads/master") | .object.sha')
     if test $status -ne 0
-        set_color
+        set_color red
         echo "can't connect to github api"
         set_color normal
         return

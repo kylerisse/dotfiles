@@ -3,13 +3,13 @@
 # [default]
 # region = us-east-2
 #
-# [profile dev]
+# [profile auth-dev]
 # region = us-east-2
 #
 # [profile prod]
 # region = us-east-2
 # role_arn = arn:aws:iam::123456789012:role/ROLE-TO-ASSUME
-# source_profile = dev
+# source_profile = auth-dev
 # ====================
 #
 # sample ~/.aws/credentials
@@ -22,7 +22,7 @@
 function aws_mfa --description 'authenticate to AWS using an MFA device'
     # check if user is force bypassing time comparison
     if test (count $argv) -lt 1 -o "$argv[1]" != "force"
-        set -l existing_expiration (cat ~/.aws/credentials | grep -A5 '\[dev\]' | grep expiration | awk '{print $3}')
+        set -l existing_expiration (cat ~/.aws/credentials | grep -A5 '\[auth-dev\]' | grep expiration | awk '{print $3}')
         if test $existing_expiration != ""
             set -l existing_epoch (awsutc_to_epoch $existing_expiration)
             set -l current_epoch (date +%s)
@@ -45,9 +45,9 @@ function aws_mfa --description 'authenticate to AWS using an MFA device'
     set -l session_token (echo $tokens | jq -r '.Credentials.SessionToken')
     set -l session_expiration (echo $tokens | jq -r '.Credentials.Expiration')
 
-    sed -i '' '/dev/,$d' ~/.aws/credentials
+    sed -i '' '/auth-dev/,$d' ~/.aws/credentials
 
-    echo "[dev]" >>~/.aws/credentials
+    echo "[auth-dev]" >>~/.aws/credentials
     echo "aws_access_key_id = $access_key" >>~/.aws/credentials
     echo "aws_secret_access_key = $secret_key" >>~/.aws/credentials
     echo "aws_session_token = $session_token" >>~/.aws/credentials
