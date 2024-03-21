@@ -22,7 +22,6 @@ ms-python.vscode-pylance
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
-ms-vscode.makefile-tools
 ms-vscode.remote-explorer
 redhat.ansible
 redhat.vscode-yaml
