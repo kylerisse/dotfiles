@@ -16,6 +16,7 @@ golang.go
 hashicorp.terraform
 jdforsythe.add-new-line-to-files
 jnoortheen.nix-ide
+mechatroner.rainbow-csv
 ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
