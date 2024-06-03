@@ -53,5 +53,6 @@
         "<C-x>": false,
         "<C-v>": false
     },
-    "vim.overrideCopy": false
+    "vim.overrideCopy": false,
+    "editor.stickyScroll.enabled": false
 }
