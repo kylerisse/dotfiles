@@ -24,3 +24,5 @@ if status is-interactive
     set GOROOT (ls -al /run/current-system/sw/bin/go | awk '{print $11}' | string replace '/bin/' '/share/')
   end
 end
+
+direnv hook fish | source
