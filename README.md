@@ -22,6 +22,11 @@ chezmoi init --apply kylerisse
   exclude = ["scripts"]
 ```
 
+vscode mac
+```
+ln -s ~/.config/Code/Users/settings.json ~/Library/Application\ Support/Code/User/settings.json
+```
+
 ## Helpers
 
 ```
