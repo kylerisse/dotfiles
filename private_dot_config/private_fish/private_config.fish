@@ -19,6 +19,20 @@ if status is-interactive
     source ~/.config/chezmoi/private-vars.fish
   end
 
+  # direnv shell hooks
+  if type -q direnv
+    direnv hook fish | source
+  end
+
+  # kube shorthands
+  if type -q kubectl
+    alias k='kubectl'
+  end
+
+  if type -q kubectx
+    alias kx='kubectx'
+  end
+
   # set GOROOT to nix location
   if test -e /run/current-system/sw/bin/go
     set GOROOT (ls -al /run/current-system/sw/bin/go | awk '{print $11}' | string replace '/bin/' '/share/')
