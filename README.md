@@ -22,6 +22,13 @@ chezmoi init --apply kylerisse
   exclude = ["scripts"]
 ```
 
+`~/.config/chezmoi/private-vars.yml`
+```
+set GITLAB_SYNC_GROUP "1234567"
+set GITLAB_BASE_PATH "/home/user/workspace"
+set GITLAB_RO_API_TOKEN "ZYX-ABCDEFGH"
+```
+
 vscode mac
 ```
 ln -s ~/.config/Code/Users/settings.json ~/Library/Application\ Support/Code/User/settings.json
