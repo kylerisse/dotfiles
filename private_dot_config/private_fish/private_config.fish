@@ -11,8 +11,9 @@ if status is-interactive
     alias diff='icdiff --line-numbers'
   end
 
-  set LESS '-xR'
-  alias less='less -xR'
+  set LESS '-XR'
+  alias less='less -XR'
+  set PAGER 'less -XR'
 
   # private variables aren't secrets but shouldn't be public either
   if test -e ~/.config/chezmoi/private-vars.fish
