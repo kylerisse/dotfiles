@@ -33,6 +33,12 @@ if status is-interactive
     alias kx='kubectx'
   end
 
+  # podman shorthands
+  if type -q podman
+    alias p='podman'
+    alias renovate-config-validator='podman run -v (pwd):/usr/src/app -ti ghcr.io/renovatebot/renovate renovate-config-validator'
+  end
+
   # set GOROOT to nix location
   if test -e /run/current-system/sw/bin/go
     set GOROOT (ls -al /run/current-system/sw/bin/go | awk '{print $11}' | string replace '/bin/' '/share/')
