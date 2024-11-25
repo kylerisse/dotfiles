@@ -11,8 +11,9 @@ if status is-interactive
     alias diff='icdiff --line-numbers'
   end
 
-  set LESS '-xR'
-  alias less='less -xR'
+  set LESS '-XR'
+  alias less='less -XR'
+  set PAGER 'less -XR'
 
   # private variables aren't secrets but shouldn't be public either
   if test -e ~/.config/chezmoi/private-vars.fish
@@ -31,6 +32,12 @@ if status is-interactive
 
   if type -q kubectx
     alias kx='kubectx'
+  end
+
+  # podman shorthands
+  if type -q podman
+    alias p='podman'
+    alias renovate-config-validator='podman run -v (pwd):/usr/src/app -ti ghcr.io/renovatebot/renovate renovate-config-validator'
   end
 
   # set GOROOT to nix location
