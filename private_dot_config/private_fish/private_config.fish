@@ -39,6 +39,7 @@ if status is-interactive
 
   # podman shorthands
   if type -q podman
+    alias docker='podman'
     alias p='podman'
     alias renovate-config-validator='podman run -v (pwd):/usr/src/app -ti ghcr.io/renovatebot/renovate renovate-config-validator'
   end
