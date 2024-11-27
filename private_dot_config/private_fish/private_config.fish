@@ -3,6 +3,9 @@ if status is-interactive
     set EDITOR nvim
     alias vi='nvim'
     alias vim='nvim'
+  else if type -q vim
+    set EDITOR vim
+    alias vi='vim'
   else
     set EDITOR vi
   end
@@ -36,6 +39,7 @@ if status is-interactive
 
   # podman shorthands
   if type -q podman
+    alias docker='podman'
     alias p='podman'
     alias renovate-config-validator='podman run -v (pwd):/usr/src/app -ti ghcr.io/renovatebot/renovate renovate-config-validator'
   end
