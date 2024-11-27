@@ -3,6 +3,9 @@ if status is-interactive
     set EDITOR nvim
     alias vi='nvim'
     alias vim='nvim'
+  else if type -q vim
+    set EDITOR vim
+    alias vi='vim'
   else
     set EDITOR vi
   end
