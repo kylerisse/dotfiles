@@ -48,3 +48,7 @@
   lo      = log --oneline
   sha     = rev-parse --short HEAD
   lsha    = rev-parse HEAD
+
+[advice]
+  # ignore horrible advice when push fails
+  pushNonFastForward = false
