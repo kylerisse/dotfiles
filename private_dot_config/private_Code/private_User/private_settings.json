@@ -47,6 +47,7 @@
     },
     "trailing-spaces.trimOnSave": true,
     "vim.handleKeys": {
+        "<C-a>": false,
         "<C-w>": false,
         "<C-f>": false,
         "<C-c>": false,
