@@ -11,8 +11,10 @@
     },
     "cSpell.advanced.feature.useReferenceProviderWithRename": true,
     "editor.fontSize": 14,
+    "editor.stickyScroll.enabled": false,
     "editor.suggest.localityBonus": true,
     "editor.suggest.showFunctions": true,
+    "eslint.format.enable": true,
     "files.associations": {
         "*.raku": "perl6"
     },
@@ -54,6 +56,5 @@
         "<C-x>": false,
         "<C-v>": false
     },
-    "vim.overrideCopy": false,
-    "editor.stickyScroll.enabled": false
+    "vim.overrideCopy": false
 }
