@@ -13,6 +13,7 @@ set -l NODE_OPTIONS ""
 set wanted_extensions (echo "bmalehorn.vscode-fish
 boto3typed.boto3-ide
 dbaeumer.vscode-eslint
+esbenp.prettier-vscode
 golang.go
 hashicorp.terraform
 jdforsythe.add-new-line-to-files
