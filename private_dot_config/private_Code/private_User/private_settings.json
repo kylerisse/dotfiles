@@ -10,10 +10,15 @@
         }
     },
     "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "editor.fontSize": 14,
     "editor.stickyScroll.enabled": false,
     "editor.suggest.localityBonus": true,
     "editor.suggest.showFunctions": true,
+    "editor.tabSize": 4,
     "eslint.format.enable": true,
     "files.associations": {
         "*.raku": "perl6"
@@ -25,6 +30,30 @@
     },
     "go.toolsManagement.autoUpdate": false,
     "go.useLanguageServer": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "prettier":  {
+        "experimentalTernaries": true,
+        "htmlWhitespaceSensitivity": "strict",
+        "jsxSingleQuote": true,
+        "singleAttributePerLine": true,
+        "singleQuote": true,
+        "useTabs": true
+    },
     "protoc": {
         "compile_on_save": false
     },
@@ -48,6 +77,14 @@
         "editor.formatOnSaveMode": "file"
     },
     "trailing-spaces.trimOnSave": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-w>": false,
