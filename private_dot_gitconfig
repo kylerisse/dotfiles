@@ -15,7 +15,8 @@
   pager = less -xR
   excludesfile = ~/.gitignore
 
-[advise]
+[advice]
+  # ignore horrible advice when push fails
   pushNonFastForward = false
 
 [stash]
@@ -52,6 +53,3 @@
   sha     = rev-parse --short HEAD
   lsha    = rev-parse HEAD
 
-[advice]
-  # ignore horrible advice when push fails
-  pushNonFastForward = false
