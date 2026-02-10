@@ -69,5 +69,5 @@
   lsha    = rev-parse HEAD
   nbr     = "!f() { \
       NEW_BRANCH=$(date -u +\"%Y%m%d%H%M%S\"); \
-      git checkout -b ${NEW_BRANCH}; \
+      git checkout -b kr/${NEW_BRANCH}; \
     }; f"
