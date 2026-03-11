@@ -10,7 +10,8 @@ end
 
 set -l NODE_OPTIONS ""
 
-set wanted_extensions (echo "bmalehorn.vscode-fish
+set wanted_extensions (echo "anthropic.claude-code
+bmalehorn.vscode-fish
 boto3typed.boto3-ide
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode
@@ -22,13 +23,10 @@ mechatroner.rainbow-csv
 ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
-ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode.remote-explorer
-redhat.ansible
 redhat.vscode-yaml
-scriplit.perl6-lsp
 shardulm94.trailing-spaces
 streetsidesoftware.code-spell-checker
 timonwong.shellcheck
