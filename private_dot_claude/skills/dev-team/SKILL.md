@@ -201,9 +201,17 @@ Use the @staff-engineer agent to review implementation changes:
 
 Review the changes made by @senior-engineer for this work.
 
+To find what changed, use:
+   BASE=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+   [ -z "$BASE" ] && BASE=$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
+   git diff $BASE...HEAD          # Full diff of branch changes
+   git diff $BASE...HEAD --stat   # Summary of files changed
+   git log --oneline $BASE..HEAD  # Commit history on this branch
+
 Requirements:
-- Review all modified files using git diff
+- Check docs/tdd/, docs/ux/, and docs/spec/ for relevant design context before reviewing
 - Evaluate across six dimensions: architecture, security, operations, performance, code quality, testing
+- Run `nix flake check` if `flake.nix` exists to validate the build
 - Provide actionable feedback structured by severity (blocker, concern, suggestion, praise)
 - If blockers are found, list them clearly so they can be addressed before the work is complete
 ```
