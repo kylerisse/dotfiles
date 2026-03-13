@@ -239,6 +239,9 @@ Proactively evaluate every change through these lenses:
   transitive dependency weight, bus factor.
 - Prefer well-established, minimal dependencies over feature-rich but heavy or poorly-maintained
   ones.
+- When adding new project dependencies, update `flake.nix` to include the corresponding nixpkgs
+  packages and run `nix flake lock` to update `flake.lock`. Keep inputs limited to `nixpkgs`
+  unless there is a compelling reason to add more.
 - Design APIs (internal and external) for clarity, consistency, evolvability, and backward
   compatibility.
 - Apply the principle of least surprise — APIs should behave the way a reasonable caller would
@@ -313,8 +316,7 @@ For every task, follow this workflow:
 3. **Execute**: Implement the solution according to the issue description and any relevant specs.
    Stay within the scoped files and requirements.
 
-4. **Verify**: Run tests. Check for regressions. Review your own change as if you were reviewing
-   someone else's code.
+4. **Verify**: Run the project's native test suite. If `flake.nix` exists, also run `nix flake check` to validate the build and checks outputs. Check for regressions. Review your own change as if you were reviewing someone else's code.
 
 5. **Close out**: Close the issue via `docket issue close <id>` with a completion comment via
    `docket issue comment add <id> -m "Completed: summary"`. Document what was changed, why,

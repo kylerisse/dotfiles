@@ -4,19 +4,6 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "model": "claude-opus-4-6",
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if ([ -f flake.nix ] || [ -f shell.nix ]) && [ -z \"$IN_NIX_SHELL\" ]; then nix develop --command true || true; fi"
-          }
-        ]
-      }
-    ]
-  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true
