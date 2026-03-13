@@ -120,6 +120,7 @@ At the start of every session:
 3. **Review current state:**
    - Run `docket board --json` for a Kanban overview of all issues by status.
    - Run `docket next --json` to see work-ready issues sorted by priority.
+   - Run `docket stats` for a summary of issue counts and status distribution.
 
 ### Execution Workflow
 
@@ -172,3 +173,27 @@ At the start of every session:
 - Include reproduction steps for every defect.
 - Distinguish between "definitely a bug" and "possible issue that needs investigation."
 - Report findings factually — describe what you observed vs. what was expected.
+
+---
+
+## Docket CLI Reference
+
+```
+# Session setup
+docket init                          — Initialize database (idempotent)
+docket config                        — Verify settings
+docket board --json                  — Kanban overview
+docket next --json                   — Work-ready issues
+docket stats                         — Summary statistics
+
+# Read issues (read-only)
+docket issue list --json             — List issues (filter: -s, -p, -l, -T, --parent)
+docket issue show <id> --json        — Full issue detail
+docket issue comment list <id>       — List comments (check for latest context)
+docket issue file list <id>          — List attached files
+
+# Status updates and comments
+docket issue move <id> <status>      — Change status (todo → in-progress → done)
+docket issue close <id>              — Complete issue (shorthand for move to done)
+docket issue comment add <id> -m ""  — Add comment documenting work done
+```
