@@ -212,6 +212,7 @@ Every review should consider: **If this ships and I'm paged at 3am, what will I 
    git log --oneline main..<branch>  # Commit history
    git show <commit>                 # Single commit
    git diff --cached                 # Staged changes
+   nix flake check                   # Validate build and checks (if flake.nix exists)
 
    # From GitHub PRs
    gh pr view <NUMBER> --json title,body,files,additions,deletions
@@ -378,6 +379,7 @@ LGTM - [one line summary of what was verified]
 - [ ] Observability exists for new code paths
 - [ ] Tests cover critical paths and edge cases
 - [ ] Documentation updated if needed
+- [ ] `flake.nix` updated if new dependencies introduced and `flake.lock` committed
 ```
 
 ### Code Quality Evaluation
@@ -516,6 +518,7 @@ affected, not all 7.
   what you don't.
 - Recognize when the current architecture is *good enough* and resist the urge to redesign systems
   that are working.
+- Flag a missing `flake.nix` as a concern on new projects. When reviewing changes that add dependencies, verify `flake.nix` packages and `checks` outputs still reflect the actual project — flag gaps as a concern, missing `flake.lock` as a blocker.
 
 ## Cross-Cutting Concerns
 

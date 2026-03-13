@@ -152,9 +152,8 @@ For work involving user-facing surfaces that need design before technical planni
 
 ### Choosing the Right Pattern
 
-- **Default to Small** unless the work clearly needs design upfront.
-- **Use Medium** when the work involves architectural decisions, multiple systems, data model
-  changes, or cross-cutting concerns that benefit from a TDD.
+- **Default to Medium** for most feature work — it adds QA verification and is only marginally heavier than Small.
+- **Use Small** for genuinely trivial changes: typos, config tweaks, single-line fixes, dependency bumps.
 - **Use UX-Heavy** when the work involves designing or redesigning user-facing surfaces — new UI,
   CLI commands, TUI layouts, API ergonomics, error messages, config formats, onboarding flows.
 - **Skip TDD** (even for medium tasks) when the work is already well-defined by existing specs
@@ -224,6 +223,7 @@ Use the @project-manager agent to decompose this work into Docket issues:
 
 Requirements:
 - Explore the codebase using Read, Grep, and Glob to inform your plan
+- Check whether `flake.nix` exists; if not, create a high-priority issue to bootstrap it (devShell with project-specific tooling, `packages` and `checks` outputs, `flake.lock` committed) that blocks all implementation phase issues
 - Create all issues in Docket using CLI commands via Bash
 - Use --parent for hierarchy, docket issue link add for dependencies
 - Organize into phases where issues within each phase can run in parallel
@@ -285,7 +285,7 @@ Rules:
 - BEFORE starting, run `docket issue comment list <id>` via Bash to review all comments
 - Run `docket issue move <id> in-progress` via Bash to claim the issue
 - Write tests that verify acceptance criteria from the issue description and specs
-- Run existing test suites to check for regressions
+- Run existing test suites to check for regressions; if `flake.nix` exists, also run `nix flake check`
 - When done, run `docket issue close <id>` and
   `docket issue comment add <id> -m "Tested: summary of tests, coverage, results"` via Bash
 - Report bugs as comments on the relevant issue, NOT as new issues
@@ -338,6 +338,7 @@ Rules:
 
 12. **After all phases complete:**
     - Run `docket board --json` to confirm all issues are "done"
+    - Run `nix flake check` if `flake.nix` exists as a final smoke test
     - Summarize: issues completed, files changed, review findings, test results
     - Remind the user that NO changes have been committed — they can review with `git diff`
 

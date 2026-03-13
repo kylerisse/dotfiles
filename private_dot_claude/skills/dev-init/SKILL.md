@@ -42,7 +42,7 @@ Use `TeamCreate` with name `dev-init` to set up the coordination team.
 
 ### Step 2: Create Tasks
 
-Use `TaskCreate` to create one task per spec file (7 total, or fewer if skipping existing). No
+Use `TaskCreate` to create one task per spec file (8 total, or fewer if skipping existing). No
 dependencies between tasks — all are independent.
 
 Tasks:
@@ -56,6 +56,7 @@ Tasks:
 | Generate code-quality spec | `docs/spec/code-quality.md` |
 | Generate review-strategy spec | `docs/spec/review-strategy.md` |
 | Generate testing spec | `docs/spec/testing.md` |
+| Bootstrap flake.nix | `flake.nix` |
 
 ### Step 3: Spawn Agents
 
@@ -114,6 +115,7 @@ Requirements:
 - Examine project structure, entry points, module boundaries, and dependency graph
 - Identify system components, design patterns, integration points, and key architectural decisions
 - Look at package manifests, config files, and directory layout for structure clues
+- Check for `flake.nix` and `flake.lock` and document their role in the dependency and build story
 - Document what ACTUALLY exists in the codebase — not aspirational goals
 - Be honest about gaps and missing pieces
 - Save the completed spec to `docs/spec/architecture.md`
@@ -152,6 +154,7 @@ Generate the `docs/spec/operations.md` project specification file.
 Requirements:
 - Explore the codebase thoroughly using Read, Grep, Glob, and Bash
 - Check .github/ for CI/CD workflows, Dockerfiles, deployment configs, and infrastructure code
+- Check for `flake.nix` and `flake.lock` — document whether Nix is used for reproducible dev environments and builds
 - Look for monitoring, logging, observability setup, and operational runbooks
 - Identify rollback procedures, release processes, and environment management
 - Document what ACTUALLY exists in the codebase — not aspirational goals
@@ -239,6 +242,28 @@ Requirements:
 - Save the completed spec to `docs/spec/testing.md`
 - Create the docs/spec/ directory if it doesn't exist
 - Do NOT write implementation code — the spec file is the deliverable
+- Do NOT commit any changes
+```
+
+### flake.nix
+
+```
+Use the @staff-engineer agent to bootstrap the project's Nix flake:
+
+Check whether `flake.nix` exists in the project root.
+
+If `flake.nix` already exists:
+- Verify `python3`, `jq`, and `git` are present in the `devShell` packages; add any that are missing
+- Verify `flake.lock` exists and is not gitignored; run `nix flake lock` if missing
+- Do NOT otherwise modify the existing flake
+
+If `flake.nix` does not exist:
+- Explore the codebase to identify the language, build tools, and test runners in use
+- Create `flake.nix` with a single `nixpkgs` input (no additional flake inputs unless unavoidable)
+- Include a `devShell` output with at minimum `python3`, `jq`, and `git`, plus any project-specific tooling detected
+- Include a `packages` output for the main project artifact if detectable
+- Include a `checks` output wired to the project's test suite if detectable
+- Run `nix flake lock` to generate `flake.lock`
 - Do NOT commit any changes
 ```
 

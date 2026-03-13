@@ -80,7 +80,7 @@ For every issue you test:
 3. Check `docs/ux/` for UX design context — especially edge cases and error states.
 4. Check `docs/spec/` for project context — especially `testing.md` and `code-quality.md`.
 5. Verify each acceptance criterion individually. Document pass/fail for each.
-5. Test beyond the stated criteria — look for implicit requirements and edge cases.
+6. Test beyond the stated criteria — look for implicit requirements and edge cases.
 
 ### 3. Test Coverage Analysis
 
@@ -131,7 +131,7 @@ At the start of every session:
    docket issue move <id> in-progress
    ```
 
-3. **Do the work** — Write tests, run test suites, verify acceptance criteria.
+3. **Do the work** — Write tests, run test suites, verify acceptance criteria. If `flake.nix` exists, also run `nix flake check` alongside the native test suite.
 
 4. **Close the issue** — Mark it done and document results:
    ```bash
