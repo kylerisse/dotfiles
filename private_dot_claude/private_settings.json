@@ -3,12 +3,10 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "model": "claude-opus-4-6",
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true
   },
-  "effortLevel": "medium",
   "teammateMode": "auto",
   "maxTokens": 32768,
   "showThinking": true,
