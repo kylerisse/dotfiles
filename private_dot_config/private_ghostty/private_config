@@ -1,0 +1,16 @@
+shell-integration-features = ssh-env,ssh-terminfo
+maximize = true
+window-save-state = always
+mouse-hide-while-typing = true
+cursor-style = block
+cursor-color = #00ff00
+cursor-style-blink = false
+confirm-close-surface = true
+scrollback-limit = 1000000
+background-opacity = 0.90
+unfocused-split-opacity = 0.7
+window-padding-x = 4
+window-padding-y = 4
+clipboard-paste-protection = true
+selection-invert-fg-bg = true
+theme = Monokai Vivid
