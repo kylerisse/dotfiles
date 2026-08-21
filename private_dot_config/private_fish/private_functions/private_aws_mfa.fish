@@ -21,7 +21,7 @@
 #
 function aws_mfa --description 'authenticate to AWS using an MFA device'
     # check if user is force bypassing time comparison
-    if test (count $argv) -lt 1 -o "$argv[1]" != "force"
+    if test (count $argv) -lt 1 -o "$argv[1]" != force
         set -l existing_expiration (cat ~/.aws/credentials | grep -A5 '\[auth-dev\]' | grep expiration | awk '{print $3}')
         if test $existing_expiration != ""
             set -l existing_epoch (awsutc_to_epoch $existing_expiration)
